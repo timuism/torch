@@ -12,6 +12,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@timuism/torc": "^0.0.7",
     "@urql/vue": "^1.0.4",
     "autoprefixer": "^10.4.13",
     "graphql": "^16.6.0",
