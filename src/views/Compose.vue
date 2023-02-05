@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import {torc} from "@timuism/torc"
 import { onMounted, computed, ref, watch } from "vue";
 import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
-import { parse } from '@/parse'
 import moment from 'moment'
 import type { Ref } from "vue"
 import { useRouter } from "vue-router";
@@ -38,7 +38,7 @@ const { newWorkout } = storeToRefs(useAppStore())
 const { updateNewWorkout, addWorkout } = useAppStore()
 
 const $workout = computed(() => {
-  return parse(textarea.value)
+  return torc(textarea.value)
 })
 
 const today = computed(() => {
