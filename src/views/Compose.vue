@@ -5,7 +5,7 @@ import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
 import moment from 'moment'
 import type { Ref } from "vue"
-import { useRouter } from "vue-router";
+import { useRouter, type RouteParamValueRaw } from "vue-router";
 
 const defaultText = `
 *Chest and Back* 2/4/2023
@@ -47,9 +47,9 @@ const today = computed(() => {
 })
 
 function handleCompleteWorkoutEntry() {
-  // updateNewWorkout($workout.value)
+  updateNewWorkout($workout.value)
   addWorkout($workout.value)
-  router.push('/workouts')
+  router.push({path: '/share'})
   console.log($workout.value)
 }
 </script>
@@ -101,14 +101,9 @@ function handleCompleteWorkoutEntry() {
       </div>
       
       <div class="px-12 pt-6 pb-12">
-        <button
-          type="button"
-          v-if="$workout.exercises.length > 0"
-          @click="handleCompleteWorkoutEntry"
-          class="px-4 py-4 text-purple-600 duration-150 bg-transparent border-2 border-purple-600 rounded-md hover:border-transparent hover:bg-green-600 hover:text-green-50 font-display"
-        >
+        <PrimaryButton @click="handleCompleteWorkoutEntry">
           Complete Workout Entry
-        </button>
+        </PrimaryButton>
       </div>
     </form>
 </template>

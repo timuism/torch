@@ -9,6 +9,8 @@ import "@/assets/fonts/space-mono-v12-latin/space-mono.css"
 import "@/assets/fonts/unbounded-v3-latin/unbounded.css"
 import "@/assets/fonts/montserrat-v25-latin/montserrat.css"
 
+import PrimaryButton from "@/components/PrimaryButton.vue"
+
 createApp(App)
   .use(createPinia())
   .use(router)
@@ -22,4 +24,5 @@ createApp(App)
       }
     }
   })
+  .component('PrimaryButton', PrimaryButton)
   .mount("#app")
