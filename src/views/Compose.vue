@@ -32,6 +32,8 @@ shoulder press:
 `
 
 const router = useRouter()
+
+// @todo: move defaultUnit into global state
 const defaultUnit = ('lbs')
 const textarea = ref(defaultText)
 const { newWorkout } = storeToRefs(useAppStore())

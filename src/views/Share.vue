@@ -7,6 +7,9 @@ import type { Ref } from 'vue'
 
 const { newWorkout } = storeToRefs(useAppStore())
 const $workout = newWorkout.value
+
+// @todo: move defaultUnit into global state
+const defaultUnit = ('lbs')
 const imageGenerated = ref(false)
 const workoutContainer = ref(null)
 const capture:Ref<HTMLDivElement | null> = ref(null)
